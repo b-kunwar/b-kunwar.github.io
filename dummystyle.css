@@ -1,0 +1,19 @@
+.flex-container{
+    display:flex;
+    /*
+    align-items:flex-start;
+    align-items:flex-end;
+    align-items:center;
+    
+    flex-direction:column;
+    */
+  }
+  .flex-container div {
+    border:1px #ccc solid;
+    padding:10px;
+  }
+  .my-image{
+    display: block;
+    margin: auto;
+    width: 250px;
+}

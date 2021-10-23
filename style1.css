@@ -1,0 +1,83 @@
+
+    body {font-family: Arial;}
+    
+    
+    #main-header{
+      font-size: 12px;
+      background-color: #ffffff;
+      color:#248d6c;
+      text-align: center;
+  }
+  /* Style the tab */
+  .tab {
+    overflow: hidden;
+    border: 1px solid #ccc;
+    background-color: #f1f1f1;
+  }
+  #navbar{
+    /* background-color: red;
+    color: #fff;
+    */
+    text-align: center;
+  }
+  .tab button {
+    background-color: inherit;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    transition: 0.3s;
+    font-size: 17px;
+  }
+  /* Change background color of buttons on hover */
+  .tab button:hover {
+    background-color: #ddd;
+  }
+   /* Create an active/current tablink class */
+   .tab button.active {
+    background-color: #ccc;
+  }
+  /* Style the tab content */
+    .tabcontent {
+      display: none;
+      padding: 6px 12px;
+      /* border: 1px solid red; */
+      border-top: none;
+    }
+     /* Style the close button */
+   
+     .topright {
+      float: right;
+      cursor: pointer;
+      font-size: 28px;
+    }
+    .topright:hover {color: red;}
+ 
+   
+    .flex-container{
+      display:flex;
+      /*
+      align-items:flex-start;
+      align-items:flex-end;
+      align-items:center;
+      
+      flex-direction:column;
+      */
+    }
+    .flex-container  div {
+      border:none;
+      padding:10px;
+    }
+    .my-image{
+        display: block;
+        margin: auto;
+        width: 250px;
+    }
+    ul.my-list {
+      list-style-type: none;
+  }
+    @media (max-width: 750px) {
+      .flex-container {
+        flex-direction: column;
+      }
+    }

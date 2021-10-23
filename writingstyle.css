@@ -1,0 +1,39 @@
+body {font-family: Arial;}
+.flex-w-container {
+    display: flex;
+    flex-direction: column;
+    /* background-color: DodgerBlue; */
+  }
+  
+  .flex-w-container > div {
+    border:1px #ccc solid;
+    background-color:white;
+    margin: 10px;
+    padding: 20px;
+    font-size: 15px;
+  }
+  a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  /* a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  } */
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  .image{
+    display: block;
+    margin: auto;
+    width: 250px;
+}
