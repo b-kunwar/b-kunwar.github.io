@@ -1,7 +1,8 @@
 body {font-family: Arial;}
 .flex-w-container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    /* flex-direction: column; */
     /* background-color: DodgerBlue; */
   }
   
