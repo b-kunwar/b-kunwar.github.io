@@ -15,9 +15,9 @@
     background-color: #ffffff;
   }
   .container {
-    width: 80%;
+    width: 70%;
     margin: auto;
-    max-width: 1200px;
+    /* max-width: 1100px; */
   }
   .name-container {
     padding-top: 24px;
@@ -77,12 +77,14 @@
     }
     .flex-container div {
       border:none;
-      padding:100px;
+      padding:50px 60px;
     }
+
+
     .my-image{
         display: block;
         margin: auto;
-        width: 250px;
+        width: 294px;
     }
     ul.my-list {
       list-style-type: none;

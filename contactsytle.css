@@ -1,0 +1,34 @@
+
+    body {font-family: Arial;}
+    
+  
+    .flex-c-container{
+      display:flex;
+      column-gap:0px;
+      align-items: flex-start;
+      /*
+      align-items:flex-start;
+      align-items:flex-end;
+      align-items:center;
+      
+      flex-direction:column;
+      */
+    }
+
+    .flex-c-container .add {
+      border:none;
+      padding:50px 60px;
+      text-align: center;
+    }
+
+
+    .my-image{
+        display: block;
+        margin: auto;
+   
+  }
+    @media (max-width: 750px) {
+      .flex-container {
+        flex-direction: column;
+      }
+    }
