@@ -15,14 +15,16 @@
     background-color: #ffffff;
   }
   .container {
-    width: 70%;
+    width: 80%;
     margin: auto;
     /* max-width: 1100px; */
+    /* border: 1px solid red; */
   }
   .name-container {
     padding-top: 24px;
     padding-bottom:24px;
   }
+  
   #navbar{
     /* background-color: red;
     color: #fff;
@@ -67,6 +69,7 @@
       display:flex;
       column-gap:0px;
       align-items: center;
+      /* border: 1px solid blue; */
       /*
       align-items:flex-start;
       align-items:flex-end;
@@ -76,7 +79,7 @@
       */
     }
     .flex-container div {
-      border:none;
+      border:1 px solid black;
       padding:50px 60px;
     }
 
@@ -94,3 +97,4 @@
         flex-direction: column;
       }
     }
+    
