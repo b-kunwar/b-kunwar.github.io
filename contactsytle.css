@@ -20,7 +20,8 @@
       border: 1px solid blue;
     }  */
     .icons{
-      border: 1px solid black;
+      /* border: 1px solid black; */
+      display: grid;
       align-items: center;
 
     }
