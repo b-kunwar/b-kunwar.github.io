@@ -2,20 +2,31 @@
     body {font-family: Arial;}
     
   
-    .flex-c-container{
-      display:flex;
-      column-gap:0px;
-      align-items: flex-start;
+    .container{
+      display:grid;
+      grid-template-columns: auto auto;
+      align-items:center;
+     
       /*
       align-items:flex-start;
       align-items:flex-end;
-      align-items:center;
+      
       
       flex-direction:column;
       */
+      /* border: 1px solid red; */
     }
+    /* .flex-c-container{
+      border: 1px solid blue;
+    }  */
+    .icons{
+      border: 1px solid black;
+      align-items: center;
 
-    .flex-c-container .add {
+    }
+    
+
+    .flex-c-container > div {
       border:none;
       padding:50px 60px;
       text-align: center;
@@ -25,6 +36,7 @@
     .my-image{
         display: block;
         margin: auto;
+        width: 294px;
    
   }
     @media (max-width: 750px) {
