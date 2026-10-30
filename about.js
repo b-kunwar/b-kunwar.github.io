@@ -1,4 +1,4 @@
-// About_Me.txt uses blank lines for paragraphs and a bullet or "- " for list items.
+// aboutme.txt uses blank lines for paragraphs and a bullet or "- " for list items.
 function renderAboutMe(text, container) {
   const fragment = document.createDocumentFragment();
   let paragraph = [];
@@ -7,7 +7,21 @@ function renderAboutMe(text, container) {
   function finishParagraph() {
     if (paragraph.length) {
       const element = document.createElement('p');
-      element.textContent = paragraph.join(' ');
+      const links = {
+        'Vehicle Systems, Dynamics, and Design Laboratory': 'https://www.vsddl.com/',
+        'Prokura Innovations': 'https://www.prokurainnovations.com/'
+      };
+      const parts = paragraph.join(' ').split(/(Vehicle Systems, Dynamics, and Design Laboratory|Prokura Innovations)/g);
+      for (const part of parts) {
+        if (Object.prototype.hasOwnProperty.call(links, part)) {
+          const link = document.createElement('a');
+          link.href = links[part];
+          link.textContent = part;
+          element.appendChild(link);
+        } else {
+          element.appendChild(document.createTextNode(part));
+        }
+      }
       fragment.appendChild(element);
       paragraph = [];
     }
@@ -39,8 +53,8 @@ function renderAboutMe(text, container) {
 async function loadAboutMe() {
   const container = document.getElementById('about-me');
   try {
-    const response = await fetch('About_Me.txt', { cache: 'no-cache' });
-    if (!response.ok) throw new Error('Unable to load About_Me.txt');
+    const response = await fetch('aboutme.txt', { cache: 'no-cache' });
+    if (!response.ok) throw new Error('Unable to load aboutme.txt');
     renderAboutMe(await response.text(), container);
   } catch (error) {
     container.textContent = 'The About Me section could not be loaded. Please refresh the page to try again.';
