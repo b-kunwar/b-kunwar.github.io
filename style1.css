@@ -44,3 +44,23 @@ img{max-width:100%}h1,h2,h3{line-height:1.25}
 .publications .citation li > p > a:first-child:hover { text-decoration: underline; }
 .standalone-section { max-width: 1240px; margin: 0 auto; padding: 40px 32px 64px; }
 @media (max-width: 760px) { .standalone-section { padding: 26px 18px 44px; } }
+
+/* Quick message form */
+button.message-button,.tab button.message-button{border:1px solid var(--green);border-radius:8px;background:var(--green);color:white;padding:10px 18px;font:inherit;font-weight:600;cursor:pointer}
+.tab button.message-button{align-self:center;margin:6px 0 6px 12px}
+button.message-button:hover,.tab button.message-button:hover{background:#15543f;color:white}
+.contact-message-action{max-width:880px;margin:24px auto 0}
+#message-dialog{width:min(540px,calc(100% - 32px));max-height:calc(100dvh - 40px);overflow-y:auto;padding:28px;border:1px solid var(--line);border-radius:16px;background:var(--paper);color:var(--ink);box-shadow:0 20px 80px #20332e33}
+#message-dialog::backdrop{background:#10271f88}
+.message-heading-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.message-heading-row h2{margin:0;font-size:26px}
+.message-close{border:0;border-radius:6px;background:transparent;color:var(--ink);font-size:28px;cursor:pointer;min-width:44px;min-height:44px}
+.message-close:hover{background:#edf3ef}
+#message-dialog label{display:block;margin:18px 0 6px;font-weight:600}
+#message-dialog input[type=email],#message-dialog textarea{display:block;width:100%;padding:12px;border:1px solid #9aafa1;border-radius:8px;font:inherit;background:white;color:var(--ink)}
+#message-dialog textarea{resize:vertical;min-height:140px}
+#message-dialog input:focus-visible,#message-dialog textarea:focus-visible{outline:2px solid var(--green);outline-offset:2px}
+.message-optional,.message-disclosure{font-size:13px;color:var(--muted);font-weight:400}
+.message-honeypot{display:none}
+.message-email-alternative{display:inline-block;margin:12px 0 0 14px;font-size:14px}
+@media(max-width:760px){.tab button.message-button{margin-left:6px;padding:8px 12px;font-size:14px}#message-dialog{padding:20px}.message-email-alternative{display:block;margin:14px 0 0}}

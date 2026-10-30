@@ -40,3 +40,11 @@ Push changes through GitHub Desktop, then wait for the Pages build to finish. Th
 For a local preview with Ruby and Bundler installed, run `bundle install`, then `bundle exec jekyll serve`. Open the address it reports. Opening the source HTML directly is not a preview: it contains Jekyll template instructions that are resolved during the build.
 
 `main.js` still controls tabs, and Project remains the landing page. The older `about.js` and `content.js` are no longer loaded by the website.
+
+## Visitor messages
+
+The navigation and Contact buttons open one shared message dialog from `_includes/message-form.html`. Introductory text is in `_includes/sections/message.md`. FormSubmit forwards messages to `bikash.kunwar096@gmail.com`; optional visitor email enables replies. Messages are limited to 1,000 characters in the browser, with FormSubmit's default CAPTCHA and an additional honeypot for spam prevention.
+
+One-time activation: after deployment, submit a short message yourself and confirm FormSubmit's activation email (check Spam too). Delivery is not verified until activation and a real submission are confirmed. The form uses a normal HTTPS POST, so visitors see the service's verification/confirmation flow before returning to `message-sent.html`; the site never claims AJAX delivery succeeded.
+
+The recipient address is already public on Contact and also appears in the form source. After activation, FormSubmit can provide an opaque endpoint identifier; replace the email in the form action with that identifier if desired. Do not put passwords or email API keys in this repository.

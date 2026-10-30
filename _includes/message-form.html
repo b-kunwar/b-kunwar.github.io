@@ -1,0 +1,21 @@
+<dialog id="message-dialog" aria-labelledby="message-heading">
+  <div class="message-heading-row">
+    <h2 id="message-heading">Message me</h2>
+    <button type="button" class="message-close" data-message-close aria-label="Close message form">×</button>
+  </div>
+  {% capture message_intro %}{% include sections/message.md %}{% endcapture %}
+  {{ message_intro | markdownify }}
+  <form action="https://formsubmit.co/bikash.kunwar096@gmail.com" method="POST">
+    <label for="visitor-message">Message</label>
+    <textarea id="visitor-message" name="message" rows="5" maxlength="1000" required placeholder="Write a short message…"></textarea>
+    <label for="visitor-email">Your email <span class="message-optional">(optional, if you’d like a reply)</span></label>
+    <input id="visitor-email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com">
+    <input type="hidden" name="_subject" value="New message from your personal website">
+    <input type="hidden" name="_next" value="https://b-kunwar.github.io/message-sent.html">
+    <input type="hidden" name="_template" value="table">
+    <input type="text" name="_honey" class="message-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+    <p class="message-disclosure">Your message and email are processed by <a href="https://formsubmit.co/privacy.pdf" target="_blank" rel="noopener noreferrer">FormSubmit</a> and forwarded to me.</p>
+    <button class="message-button" type="submit">Send message</button>
+    <a class="message-email-alternative" href="mailto:bikash.kunwar096@gmail.com">Or email me directly</a>
+  </form>
+</dialog>

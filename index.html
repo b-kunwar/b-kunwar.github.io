@@ -5,7 +5,7 @@ layout: null
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style1.css?v=20261029-refresh">
+<link rel="stylesheet" href="style1.css?v=20261030-message">
 <link rel="stylesheet" href="projectstyle.css?v=20261029-refresh">
 <link rel="stylesheet" href="writingstyle.css?v=20261029-refresh">
 <link rel="stylesheet" href="contactsytle.css?v=20261029-refresh">
@@ -29,6 +29,7 @@ layout: null
     <button class="tablinks" onclick="openTab(event, 'Project')"id ="defaultOpen">Project</button>
     <button class="tablinks" onclick="openTab(event, 'Writing')">Writing</button>
     <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+    <button type="button" class="message-button" data-message-open aria-haspopup="dialog">Message me</button>
   </div>
 </nav>    
 
@@ -76,6 +77,8 @@ layout: null
 </div>
 
 
+{% include message-form.html %}
+<script src="message.js?v=20261030-message"></script>
 <script src="main.js"></script>
 </body>
 </html> 
