@@ -9,13 +9,15 @@ function renderAboutMe(text, container) {
       const element = document.createElement('p');
       const links = {
         'Vehicle Systems, Dynamics, and Design Laboratory': 'https://www.vsddl.com/',
-        'Prokura Innovations': 'https://www.prokurainnovations.com/'
+        'Prokura Innovations': 'https://www.unicef.org/innovation/venturefund/dronescohort/prokurainnovations'
       };
       const parts = paragraph.join(' ').split(/(Vehicle Systems, Dynamics, and Design Laboratory|Prokura Innovations)/g);
       for (const part of parts) {
         if (Object.prototype.hasOwnProperty.call(links, part)) {
           const link = document.createElement('a');
           link.href = links[part];
+          link.target = '_blank';
+          link.rel = 'noopener noreferrer';
           link.textContent = part;
           element.appendChild(link);
         } else {
