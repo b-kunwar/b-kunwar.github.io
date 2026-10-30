@@ -43,8 +43,10 @@ For a local preview with Ruby and Bundler installed, run `bundle install`, then 
 
 ## Visitor messages
 
-The navigation and Contact buttons open one shared message dialog from `_includes/message-form.html`. Introductory text is in `_includes/sections/message.md`. FormSubmit forwards messages to `bikash.kunwar096@gmail.com`; optional visitor email enables replies. Messages are limited to 1,000 characters in the browser, with FormSubmit's default CAPTCHA and an additional honeypot for spam prevention.
+The Say hello buttons open the shared dialog in `_includes/message-form.html`. The introduction is editable in `_includes/sections/message.md`.
 
-One-time activation: after deployment, submit a short message yourself and confirm FormSubmit's activation email (check Spam too). Delivery is not verified until activation and a real submission are confirmed. The form uses a normal HTTPS POST, so visitors see the service's verification/confirmation flow before returning to `message-sent.html`; the site never claims AJAX delivery succeeded.
+FormSubmit was removed after its server returned HTTP 521. The replacement is Web3Forms. Create a public access key for `bikash.kunwar096@gmail.com` at https://web3forms.com/#start and set `message_access_key` in `_config.yml`. The service explicitly permits this key in frontend code. Never add your email password or private email API credentials.
 
-The recipient address is already public on Contact and also appears in the form source. After activation, FormSubmit can provide an opaque endpoint identifier; replace the email in the form action with that identifier if desired. Do not put passwords or email API keys in this repository.
+Until a key is configured, the form offers Open email draft and does not claim messages were sent. Once configured, messages submit without leaving the website. The form reports success only after a successful API response, rejects whitespace-only messages, prevents duplicate in-flight sends, and retains the draft after a timeout or error. The direct-email link includes the current message text.
+
+After pushing and deploying, verify delivery by sending a message yourself and checking the inbox. No real messages were sent during automated checks.

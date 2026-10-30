@@ -7,3 +7,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - vendor
+
+# Public Web3Forms key from https://web3forms.com/#start (not an email password).
+message_access_key: "b7802206-50c7-4a97-9f78-43fe6f320ff2"

@@ -64,3 +64,8 @@ button.message-button:hover,.tab button.message-button:hover{background:#15543f;
 .message-honeypot{display:none}
 .message-email-alternative{display:inline-block;margin:12px 0 0 14px;font-size:14px}
 @media(max-width:760px){.tab button.message-button{margin-left:6px;padding:8px 12px;font-size:14px}#message-dialog{padding:20px}.message-email-alternative{display:block;margin:14px 0 0}}
+#message-status:empty{display:none}
+#message-status{padding:12px;border-radius:8px;font-size:14px;background:#edf3ef}
+#message-status[data-state=error]{background:#fff0e9;color:#813616}
+#message-status[data-state=success]{background:#e7f4eb;color:#15543f}
+button.message-button:disabled{opacity:.65;cursor:wait}
