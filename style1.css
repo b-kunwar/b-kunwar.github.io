@@ -57,7 +57,7 @@ button.message-button:hover,.tab button.message-button:hover{background:#15543f;
 .message-close{border:0;border-radius:6px;background:transparent;color:var(--ink);font-size:28px;cursor:pointer;min-width:44px;min-height:44px}
 .message-close:hover{background:#edf3ef}
 #message-dialog label{display:block;margin:18px 0 6px;font-weight:600}
-#message-dialog input[type=email],#message-dialog textarea{display:block;width:100%;padding:12px;border:1px solid #9aafa1;border-radius:8px;font:inherit;background:white;color:var(--ink)}
+#message-dialog input[type=text]:not(.message-honeypot),#message-dialog input[type=email],#message-dialog textarea{display:block;width:100%;padding:12px;border:1px solid #9aafa1;border-radius:8px;font:inherit;background:white;color:var(--ink)}
 #message-dialog textarea{resize:vertical;min-height:140px}
 #message-dialog input:focus-visible,#message-dialog textarea:focus-visible{outline:2px solid var(--green);outline-offset:2px}
 .message-optional,.message-disclosure{font-size:13px;color:var(--muted);font-weight:400}

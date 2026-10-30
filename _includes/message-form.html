@@ -8,6 +8,8 @@
   <form action="{% if site.message_access_key and site.message_access_key != empty %}https://api.web3forms.com/submit{% else %}mailto:bikash.kunwar096@gmail.com{% endif %}" method="POST">
     <label for="visitor-message">Message</label>
     <textarea id="visitor-message" name="message" rows="5" maxlength="1000" required placeholder="Write a short message…"></textarea>
+    <label for="visitor-name">Your name <span class="message-optional">(optional)</span></label>
+    <input id="visitor-name" name="name" type="text" maxlength="100" autocomplete="name" placeholder="Your name">
     <label for="visitor-email">Your email <span class="message-optional">(optional, if you’d like a reply)</span></label>
     <input id="visitor-email" name="email" type="email" maxlength="254" autocomplete="email" placeholder="you@example.com">
     <input type="hidden" name="access_key" value="{{ site.message_access_key | escape }}">
@@ -16,7 +18,7 @@
     <input type="hidden" name="redirect" value="https://b-kunwar.github.io/message-sent.html">
     <input type="checkbox" name="botcheck" class="message-honeypot" tabindex="-1" aria-hidden="true">
     {% if site.message_access_key and site.message_access_key != empty %}
-    <p class="message-disclosure">Your message and email are processed by <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">Web3Forms</a> and forwarded to me.</p>
+    <p class="message-disclosure">Your message, name, and email are processed by <a href="https://web3forms.com/privacy" target="_blank" rel="noopener noreferrer">Web3Forms</a> and forwarded to me.</p>
     {% else %}
     <p class="message-disclosure">Online messaging is being connected. You can send your message through your email app using an email draft.</p>
     {% endif %}

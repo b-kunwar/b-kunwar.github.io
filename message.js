@@ -3,6 +3,7 @@
   if (!dialog) return;
   const form = dialog.querySelector('form');
   const message = document.getElementById('visitor-message');
+  const visitorName = document.getElementById('visitor-name');
   const email = document.getElementById('visitor-email');
   const status = document.getElementById('message-status');
   const submit = form.querySelector('[type="submit"]');
@@ -11,7 +12,7 @@
   let sending = false;
   const draftURL = () => 'mailto:bikash.kunwar096@gmail.com?subject=' +
     encodeURIComponent('Message from your personal website') + '&body=' +
-    encodeURIComponent(message.value + (email.value.trim() ? '\n\nReply email: ' + email.value.trim() : ''));
+    encodeURIComponent(message.value + (visitorName.value.trim() ? '\n\nName: ' + visitorName.value.trim() : '') + (email.value.trim() ? '\n\nReply email: ' + email.value.trim() : ''));
   const updateDraft = () => { alternative.href = draftURL(); };
   const showStatus = (text, kind) => {
     status.textContent = text;
@@ -28,6 +29,7 @@
   dialog.querySelector('[data-message-close]').addEventListener('click', () => dialog.close());
   message.addEventListener('input', () => { message.setCustomValidity(''); updateDraft(); });
   email.addEventListener('input', updateDraft);
+  visitorName.addEventListener('input', updateDraft);
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
     if (sending) return;
@@ -59,7 +61,7 @@
       const result = await response.json();
       if (!response.ok || result.success !== true) throw new Error('Submission not confirmed');
       // Preserve any new text typed while the request was in flight.
-      if (message.value === payload.message && email.value === (payload.email || '')) form.reset();
+      if (message.value === payload.message && email.value === (payload.email || '') && visitorName.value === (payload.name || '')) form.reset();
       updateDraft();
       showStatus('Your message was accepted. Thank you for saying hello!', 'success');
     } catch (error) {
