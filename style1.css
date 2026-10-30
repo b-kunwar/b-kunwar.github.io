@@ -97,4 +97,9 @@
         flex-direction: column;
       }
     }
-    
+
+/* Publication list */
+.publications { max-width: 1000px; margin: 24px auto; padding: 0 16px; line-height: 1.6; }
+.publications .citation li { margin-bottom: 24px; overflow-wrap: anywhere; }
+.publication-author { color: #248d6c; }
+.publication-note { color: #555; font-size: 0.95em; }
