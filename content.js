@@ -1,27 +1,25 @@
+// Schedule once: inline includeHTML calls must not launch overlapping requests.
+let includesScheduled = false;
 function includeHTML() {
-    var z, i, elmnt, file, xhttp;
-    /*loop through a collection of all HTML elements:*/
-    z = document.getElementsByTagName("*");
-    for (i = 0; i < z.length; i++) {
-      elmnt = z[i];
-      /*search for elements with a certain atrribute:*/
-      file = elmnt.getAttribute("w3-include-html");
-      if (file) {
-        /*make an HTTP request using the attribute value as the file name:*/
-        xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-          if (this.readyState == 4) {
-            if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-            if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-            /*remove the attribute, and call this function once more:*/
-            elmnt.removeAttribute("w3-include-html");
-            includeHTML();
-          }
-        }      
-        xhttp.open("GET", file, true);
-        xhttp.send();
-        /*exit the function:*/
-        return;
-      }
+  if (includesScheduled) return;
+  includesScheduled = true;
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadIncludedSections, { once: true });
+  } else {
+    loadIncludedSections();
+  }
+}
+async function loadIncludedSections() {
+  await Promise.all(Array.from(document.querySelectorAll('[w3-include-html]'), async (element) => {
+    const file = element.getAttribute('w3-include-html');
+    try {
+      const response = await fetch(file, { cache: 'no-cache' });
+      if (!response.ok) throw new Error('Unable to load ' + file);
+      element.innerHTML = await response.text();
+      element.removeAttribute('w3-include-html');
+    } catch (error) {
+      element.textContent = 'Page not found.';
+      console.error(error);
     }
-  };
+  }));
+}

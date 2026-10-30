@@ -39,7 +39,16 @@ function renderAboutMe(text, container) {
         fragment.appendChild(list);
       }
       const item = document.createElement('li');
-      item.textContent = trimmed.replace(/^(?:•\s*|-\s+)/, '');
+      const value = trimmed.replace(/^(?:•\s*|-\s+)/, '');
+      const colon = value.indexOf(':');
+      if (colon !== -1) {
+        const label = document.createElement('strong');
+        label.textContent = value.slice(0, colon + 1);
+        item.appendChild(label);
+        item.appendChild(document.createTextNode(value.slice(colon + 1)));
+      } else {
+        item.textContent = value;
+      }
       list.appendChild(item);
     } else {
       list = null;
@@ -53,7 +62,7 @@ function renderAboutMe(text, container) {
 async function loadAboutMe() {
   const container = document.getElementById('about-me');
   try {
-    const response = await fetch('aboutme.txt', { cache: 'no-cache' });
+    const response = await fetch('aboutme.txt?v=20261029-refresh', { cache: 'no-cache' });
     if (!response.ok) throw new Error('Unable to load aboutme.txt');
     renderAboutMe(await response.text(), container);
   } catch (error) {

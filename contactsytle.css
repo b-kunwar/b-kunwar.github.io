@@ -1,70 +1,9 @@
-
-    body {font-family: Arial;}
-    
-  
-    .container{
-      display:grid;
-      grid-template-columns: auto auto;
-      align-items:center;
-     
-      /*
-      align-items:flex-start;
-      align-items:flex-end;
-      
-      
-      flex-direction:column;
-      */
-      /* border: 1px solid red; */
-    }
-    /* .flex-c-container{
-      border: 1px solid blue;
-    }  */
-    .icons{
-      /* border: 1px solid black; */
-      display: grid;
-      align-items: center;
-
-    }
-    
-
-    .flex-c-container > div {
-      border:none;
-      padding:50px 60px;
-      text-align: center;
-    }
-
-
-    .my-image{
-        display: block;
-        margin: auto;
-        width: 294px;
-   
-  }
-  .tooltip {
-    position: relative;
-    display: inline-block;
-    /* border-bottom: 1px dotted black; */
-  }
-  
-  .tooltip .tooltiptext {
-    visibility: hidden;
-    width: 120px;
-    background-color: black;
-    color: #fff;
-    text-align: center;
-    border-radius: 6px;
-    padding: 5px 0;
-  
-    /* Position the tooltip */
-    position: absolute;
-    z-index: 1;
-  }
-  
-  .tooltip:hover .tooltiptext {
-    visibility: visible;
-  }
-    @media (max-width: 750px) {
-      .flex-container {
-        flex-direction: column;
-      }
-    }
+#Contact .container{max-width:880px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:48px;align-items:center;background:#fff;border:1px solid #dce5df;border-radius:16px;padding:32px}
+#Contact .img-add{display:flex;align-items:center;gap:32px}
+#Contact .my-image{display:block;width:170px;border-radius:12px}
+#Contact .add p{margin:0}#Contact .icons{display:grid;gap:24px}
+#Contact .tooltip{position:relative;display:inline-block}
+#Contact .tooltip a{display:inline-flex;padding:5px}
+#Contact .tooltip .tooltiptext{visibility:hidden;position:absolute;z-index:1;right:100%;top:8px;width:100px;padding:5px 8px;border-radius:6px;background:#20332e;color:#fff;text-align:center;font-size:14px}
+#Contact .tooltip:hover .tooltiptext,#Contact .tooltip:focus-within .tooltiptext{visibility:visible}
+@media(max-width:760px){#Contact .container{grid-template-columns:1fr;padding:24px;gap:28px}#Contact .img-add{flex-direction:column;align-items:start;gap:22px}#Contact .icons{display:flex;flex-wrap:wrap;gap:24px}#Contact .tooltip .tooltiptext{right:auto;top:100%;left:0}}

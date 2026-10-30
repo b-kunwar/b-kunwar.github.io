@@ -1,105 +1,36 @@
-
-    body {font-family: Arial;}
-    
-    
-    #main-header{
-      font-size: 14px;
-      background-color: #ffffff;
-      color:#248d6c;
-      text-align: center;
-  }
-  /* Style the tab */
-  .tab {
-    overflow: hidden;
-    border: 1px solid #ccc;
-    background-color: #ffffff;
-  }
-  .container {
-    width: 80%;
-    margin: auto;
-    /* max-width: 1100px; */
-    /* border: 1px solid red; */
-  }
-  .name-container {
-    padding-top: 24px;
-    padding-bottom:24px;
-  }
-  
-  #navbar{
-    /* background-color: red;
-    color: #fff;
-    */
-    text-align: center;
-  }
-  .tab button {
-    background-color: inherit;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    padding: 14px 16px;
-    transition: 0.3s;
-    font-size: 17px;
-  }
-  /* Change background color of buttons on hover */
-  .tab button:hover {
-    background-color: #ddd;
-  }
-   /* Create an active/current tablink class */
-   .tab button.active {
-    background-color: #ccc;
-  }
-  /* Style the tab content */
-    .tabcontent {
-      display: none;
-      padding: 6px 12px;
-      /* border: 1px solid red; */
-      border-top: none;
-    }
-     /* Style the close button */
-   
-     .topright {
-      float: right;
-      cursor: pointer;
-      font-size: 28px;
-    }
-    .topright:hover {color: red;}
- 
-   
-    .flex-container{
-      display:flex;
-      column-gap:0px;
-      align-items: center;
-      /* border: 1px solid blue; */
-      /*
-      align-items:flex-start;
-      align-items:flex-end;
-      align-items:center;
-      
-      flex-direction:column;
-      */
-    }
-    .flex-container div {
-      border:1 px solid black;
-      padding:50px 60px;
-    }
-
-
-    .my-image{
-        display: block;
-        margin: auto;
-        width: 294px;
-    }
-    ul.my-list {
-      list-style-type: none;
-  }
-    @media (max-width: 750px) {
-      .flex-container {
-        flex-direction: column;
-      }
-    }
-
-/* Publication list */
-.publications { max-width: 1000px; margin: 24px auto; padding: 0 16px; line-height: 1.6; }
-.publications .citation li { margin-bottom: 24px; overflow-wrap: anywhere; }
-.publication-author { color: #248d6c; }
-.publication-note { color: #555; font-size: 0.95em; }
+:root{--ink:#20332e;--muted:#60716a;--green:#24795e;--line:#dce5df;--paper:#fff}
+*{box-sizing:border-box}
+/* Reserve scrollbar space so short and long tabs have identical widths. */
+html{overflow-y:scroll}
+@supports(scrollbar-gutter:stable){html{overflow-y:auto;scrollbar-gutter:stable}}
+body{margin:0;background:#f6f8f5;color:var(--ink);font-family:"Segoe UI",Arial,sans-serif;font-size:16px;line-height:1.7}
+a{color:var(--green);text-underline-offset:4px}a:hover{color:#15543f}
+a:focus-visible,button:focus-visible{outline:3px solid #24795e;outline-offset:4px}
+img{max-width:100%}h1,h2,h3{line-height:1.25}
+#main-header{background:var(--paper);text-align:center}
+.name-container{padding:38px 20px 26px}
+.name-container h1{margin:0;font-size:clamp(28px,4vw,40px);font-weight:650;letter-spacing:-1.3px}
+#navbar{background:var(--paper);border-bottom:1px solid var(--line)}
+.tab{display:flex;justify-content:center;flex-wrap:wrap;gap:4px 10px;padding:0 16px}
+.tab button{position:relative;border:0;border-bottom:3px solid transparent;background:transparent;color:var(--muted);padding:15px 19px;font:inherit;font-weight:600;cursor:pointer;transition:color 150ms ease,background-color 150ms ease}
+.tab button:hover{color:var(--green);background:#f4f8f5}
+.tab button.active{color:var(--green);border-bottom-color:var(--green)}
+.tabcontent{display:none;max-width:1240px;margin:0 auto;padding:40px 32px 64px}
+.container{width:100%;margin:0 auto}
+#Home .flex-container{display:grid;grid-template-columns:230px minmax(0,1fr);gap:56px;align-items:start;max-width:1040px;margin:0 auto}
+#Home .my-image{display:block;width:230px;border-radius:16px}
+#about-me{max-width:740px}#about-me p{margin:0 0 22px}
+#about-me ul{padding-left:22px;margin:0 0 26px}#about-me li{margin-bottom:16px;padding-left:5px}
+#about-me li::marker{color:var(--green)}#about-me strong{color:#1b5f48}
+.publications{max-width:900px;margin:0 auto}
+.publications h2{font-size:30px;margin:0 0 20px}
+.publications h3{color:var(--green);font-size:22px;margin:36px 0 18px;border-bottom:1px solid var(--line);padding-bottom:12px}
+.publications .citation{list-style:none;padding:0;margin:0}
+.publications .citation li{padding:22px 26px;margin-bottom:14px;border:1px solid var(--line);border-radius:12px;background:var(--paper);overflow-wrap:anywhere}
+.publications .citation li>a{font-weight:600;text-decoration:none}
+.publications .citation li>a:hover{text-decoration:underline}
+.publication-author{color:var(--green)}.publication-note{color:var(--muted);font-size:14px}
+#CV{max-width:1100px}#CV p{margin:0 0 18px}
+#CV embed{display:block;width:100%;height:75vh;min-height:450px;border:1px solid var(--line);border-radius:12px;background:white}
+@media(max-width:760px){.name-container{padding:26px 16px 18px}.tab{gap:0;padding:0 8px}.tab button{padding:12px 13px;font-size:14px}.tabcontent{padding:26px 18px 44px}#Home .flex-container{grid-template-columns:1fr;gap:26px}#Home .my-image{width:180px}.publications .citation li{padding:18px}}
+@media(prefers-reduced-motion:reduce){.tab button{transition:none}}
