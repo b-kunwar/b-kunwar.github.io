@@ -2,13 +2,6 @@ I am a graduate student in the Department of Aerospace Engineering at Auburn Uni
 
 I am fascinated by the possibility of aircraft learning from flight on their own and improving their performance. My PhD research builds a foundation for this goal by exploring methods and tools for understanding aircraft behavior through flight data and using that knowledge to improve their models and control systems.
 
-My research focuses on:
-
-• Aircraft Model Development: Supporting rapid sizing and simulation of full-scale and subscale aircraft for Advanced Air Mobility (AAM) applications.
-• Flight Testing and System Identification: Experimentally characterizing subscale aircraft for AAM applications centered on Simplified Vehicle Operations (SVO).
-• Simulation Model Calibration and Validation: Using flight-test data to calibrate and validate simulation models.
-• In-Flight Control Effector Fault Detection and Controller Reconfiguration: Developing methods to detect control effector failures and reconfigure controllers to protect flight within a constrained envelope.
-
 After graduation, I hope to develop aircraft that learn from flight and improve their performance from one flight to the next, while communicating their performance limitations to both expert and non-expert users.
 
 From 2019 to 2022, I worked as a drone design engineer at Prokura Innovations. With a small team of drone enthusiasts in Nepal, I designed, built, and tested a lift-plus-cruise vertical takeoff and landing (VTOL) fixed-wing UAV for delivering emergency medicines to rural communities. This experience helped motivate my decision to pursue graduate study and my interest in learning from flight.
