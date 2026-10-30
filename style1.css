@@ -69,3 +69,11 @@ button.message-button:hover,.tab button.message-button:hover{background:#15543f;
 #message-status[data-state=error]{background:#fff0e9;color:#813616}
 #message-status[data-state=success]{background:#e7f4eb;color:#15543f}
 button.message-button:disabled{opacity:.65;cursor:wait}
+
+/* Home keeps the invitation with the portrait; other sections use a side rail. */
+.home-hello{width:230px;text-align:center;margin-top:24px}
+.floating-hello{position:fixed;left:12px;top:50%;transform:translateY(-50%);z-index:20;box-shadow:0 5px 20px #20332e25}
+.floating-hello[hidden]{display:none}
+@media(min-width:1000px){.tabcontent:not(#Home),.standalone-section{width:calc(100% - 176px)}}
+@media(max-width:999px){.floating-hello{left:16px;top:auto;bottom:max(18px,env(safe-area-inset-bottom));transform:none}.tabcontent,.standalone-section{padding-bottom:100px}}
+@media(max-width:760px){.home-hello{width:180px;margin-top:20px}}

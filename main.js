@@ -11,6 +11,8 @@ function openTab(evt, cityName) {
     }
     document.getElementById(cityName).style.display = "block";
     evt.currentTarget.className += " active";
+    const floatingHello = document.getElementById("floating-hello");
+    if (floatingHello) floatingHello.hidden = cityName === "Home";
   }
   
   // Get the element with id="defaultOpen" and click on it

@@ -5,7 +5,7 @@ layout: null
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="style1.css?v=20261030-delivery-fix">
+<link rel="stylesheet" href="style1.css?v=20261030-floating">
 <link rel="stylesheet" href="projectstyle.css?v=20261029-refresh">
 <link rel="stylesheet" href="writingstyle.css?v=20261029-refresh">
 <link rel="stylesheet" href="contactsytle.css?v=20261029-refresh">
@@ -29,7 +29,6 @@ layout: null
     <button class="tablinks" onclick="openTab(event, 'Project')"id ="defaultOpen">Project</button>
     <button class="tablinks" onclick="openTab(event, 'Writing')">Writing</button>
     <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
-    <button type="button" class="message-button" data-message-open aria-haspopup="dialog">Say hello</button>
   </div>
 </nav>    
 
@@ -41,6 +40,7 @@ layout: null
     <div class="flex-container">
       <div>
         <img class="my-image" src="images/bikash.png"  alt="bikash kunwar">
+        <div class="home-hello"><button type="button" class="message-button" data-message-open aria-haspopup="dialog">Say hello</button></div>
       </div>
       <div id="about-me">
 {% capture about_content %}{% include_relative aboutme.md %}{% endcapture %}
@@ -77,9 +77,10 @@ layout: null
 </div>
 
 
+<button type="button" class="message-button floating-hello" id="floating-hello" data-message-open aria-haspopup="dialog">Say hello</button>
 {% include message-form.html %}
 <script src="message.js?v=20261030-delivery-fix"></script>
-<script src="main.js"></script>
+<script src="main.js?v=20261030-floating"></script>
 </body>
 </html> 
 
