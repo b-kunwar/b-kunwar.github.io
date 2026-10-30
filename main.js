@@ -1,20 +1,35 @@
+const sectionNames = ['Home', 'CV', 'Publication', 'Project', 'Writing', 'Contact'];
 
-function openTab(evt, cityName) {
-    var i, tabcontent, tablinks;
-    tabcontent = document.getElementsByClassName("tabcontent");
-    for (i = 0; i < tabcontent.length; i++) {
-      tabcontent[i].style.display = "none";
-    }
-    tablinks = document.getElementsByClassName("tablinks");
-    for (i = 0; i < tablinks.length; i++) {
-      tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-    const floatingHello = document.getElementById("floating-hello");
-    if (floatingHello) floatingHello.hidden = cityName === "Home";
+function showSection(sectionName) {
+  if (!sectionNames.includes(sectionName)) sectionName = 'Project';
+  for (const panel of document.getElementsByClassName('tabcontent')) {
+    panel.style.display = panel.id === sectionName ? 'block' : 'none';
   }
-  
-  // Get the element with id="defaultOpen" and click on it
-  document.getElementById("defaultOpen").click();
-  
+  for (const button of document.getElementsByClassName('tablinks')) {
+    button.classList.toggle('active', button.dataset.section === sectionName);
+  }
+  const floatingHello = document.getElementById('floating-hello');
+  if (floatingHello) floatingHello.hidden = sectionName === 'Home';
+}
+
+function sectionFromURL() {
+  try {
+    const section = decodeURIComponent(window.location.hash.slice(1));
+    return sectionNames.includes(section) ? section : 'Project';
+  } catch (error) {
+    return 'Project';
+  }
+}
+
+function openTab(evt, sectionName) {
+  if (!sectionNames.includes(sectionName)) return;
+  showSection(sectionName);
+  if (window.location.hash !== '#' + sectionName) {
+    // Update the address without jumping to the panel's element ID.
+    window.history.pushState(null, '', window.location.pathname + window.location.search + '#' + sectionName);
+  }
+}
+
+window.addEventListener('popstate', () => showSection(sectionFromURL()));
+window.addEventListener('hashchange', () => showSection(sectionFromURL()));
+showSection(sectionFromURL());

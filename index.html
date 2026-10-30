@@ -23,12 +23,12 @@ layout: null
     </header>
 <nav id="navbar">
   <div class="tab">
-    <button class="tablinks" onclick="openTab(event, 'Home')" >Home</button>
-    <button class="tablinks" onclick="openTab(event, 'CV')">CV</button>
-    <button class="tablinks" onclick="openTab(event, 'Publication')">Publication</button>
-    <button class="tablinks" onclick="openTab(event, 'Project')"id ="defaultOpen">Project</button>
-    <button class="tablinks" onclick="openTab(event, 'Writing')">Writing</button>
-    <button class="tablinks" onclick="openTab(event, 'Contact')">Contact</button>
+    <button class="tablinks" data-section="Home" onclick="openTab(event, 'Home')" >Home</button>
+    <button class="tablinks" data-section="CV" onclick="openTab(event, 'CV')">CV</button>
+    <button class="tablinks" data-section="Publication" onclick="openTab(event, 'Publication')">Publication</button>
+    <button class="tablinks" data-section="Project" onclick="openTab(event, 'Project')"id ="defaultOpen">Project</button>
+    <button class="tablinks" data-section="Writing" onclick="openTab(event, 'Writing')">Writing</button>
+    <button class="tablinks" data-section="Contact" onclick="openTab(event, 'Contact')">Contact</button>
   </div>
 </nav>    
 
@@ -80,7 +80,7 @@ layout: null
 <button type="button" class="message-button floating-hello" id="floating-hello" data-message-open aria-haspopup="dialog">{% include hello-icon.html %}<span>Say hello</span></button>
 {% include message-form.html %}
 <script src="message.js?v=20261030-name"></script>
-<script src="main.js?v=20261030-floating"></script>
+<script src="main.js?v=20261030-section-links"></script>
 </body>
 </html> 
 
