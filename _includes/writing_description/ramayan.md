@@ -1,0 +1,2 @@
+It is very cloudy outside. It may rain today or worse hailstone may fall from the sky. Rainwater is no longer neutral; pH as low as 3 is not uncommon. And some hailstones are so big that they can knock you to death. You like to stay at home but you cannot. Someone who could live would die because you stayed home. It’s for a far greater cause.  
+[Read more](https://www.prokurainnovations.com/ramayan/){:target="_blank" rel="noopener noreferrer"}

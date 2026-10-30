@@ -34,3 +34,13 @@ img{max-width:100%}h1,h2,h3{line-height:1.25}
 #CV embed{display:block;width:100%;height:75vh;min-height:450px;border:1px solid var(--line);border-radius:12px;background:white}
 @media(max-width:760px){.name-container{padding:26px 16px 18px}.tab{gap:0;padding:0 8px}.tab button{padding:12px 13px;font-size:14px}.tabcontent{padding:26px 18px 44px}#Home .flex-container{grid-template-columns:1fr;gap:26px}#Home .my-image{width:180px}.publications .citation li{padding:18px}}
 @media(prefers-reduced-motion:reduce){.tab button{transition:none}}
+
+/* Markdown content retains the card spacing and citation hierarchy. */
+.description > p:first-child { margin-top: 0; }
+.description > p:last-child { margin-bottom: 0; }
+.publications strong { color: var(--green); }
+.publications .citation li > p { margin: 0; }
+.publications .citation li > p > a:first-child { font-weight: 600; text-decoration: none; }
+.publications .citation li > p > a:first-child:hover { text-decoration: underline; }
+.standalone-section { max-width: 1240px; margin: 0 auto; padding: 40px 32px 64px; }
+@media (max-width: 760px) { .standalone-section { padding: 26px 18px 44px; } }

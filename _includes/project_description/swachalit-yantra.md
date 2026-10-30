@@ -1,0 +1,1 @@
+Swachalit Yantra (Nepali: स्वचालित यन्त्र, literally ‘autonomous vehicle’ ) was the first mechatronics project I did. The project was demonstrated in the Science, Education and Technology fair in high shcool in 2014. The yantra could navigate on its own avoiding obstacles. The yantra also had onboard sensors and LCD display to show current temperature.

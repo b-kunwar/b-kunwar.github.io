@@ -1,0 +1,2 @@
+Gauthali is a fixed-wing VTOL with an estimated range of 60km and a payload carrying capacity of 1.5kg. It was intended to deliver medical supplies like emergency medicines, vaccines, blood packets to the remote areas of Nepal. The project was supported by UNICEF Innovation Fund, 2019 for developing low cost medical delivery drones to serve the remote parts of Nepal.  
+The successful pilot test of the drone was performed in the premises of Tribhuvan University in February 2021.

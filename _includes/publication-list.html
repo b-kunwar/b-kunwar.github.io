@@ -1,0 +1,4 @@
+<section class="publications" aria-labelledby="publications-heading">
+{% capture section_content %}{% include sections/publications.md %}{% endcapture %}
+{{ section_content | markdownify | replace: '<ul>', '<ul class="citation">' }}
+</section>

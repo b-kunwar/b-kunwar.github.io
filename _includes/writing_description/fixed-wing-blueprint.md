@@ -1,0 +1,1 @@
+The design of the fixed-wing drone is an iterative process where design estimates get better as the design progresses. The blueprint comprises the articles that describe the flow chart of the design process and links to the calculation sheet wherever necessary.

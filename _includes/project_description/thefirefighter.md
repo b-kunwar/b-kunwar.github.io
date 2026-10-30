@@ -1,0 +1,1 @@
+TheFireFighter was an autonomous prototype robot that could sense fire/flames and navigate to the site of fire and automatically extinguish the flame by pumping water from the on-board water tank. This project won the title of the design competition in MechTRIX 2016.
